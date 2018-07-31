@@ -157,6 +157,8 @@ public final class Utilities {
     public static final boolean IS_DEBUG_DEVICE =
             Build.TYPE.toLowerCase(Locale.ROOT).equals("eng");
 
+    public static final String GSA_PACKAGE = "com.google.android.googlequicksearchbox";
+
     /**
      * Returns true if theme is dark.
      */
@@ -947,5 +949,13 @@ public final class Utilities {
             }
             android.os.Process.killProcess(android.os.Process.myPid());
         });
+    }
+
+    public static boolean isGSAEnabled(Context context) {
+        try {
+            return context.getPackageManager().getApplicationInfo(GSA_PACKAGE, 0).enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }

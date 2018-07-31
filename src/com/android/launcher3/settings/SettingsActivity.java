@@ -20,8 +20,10 @@ import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTIO
 
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -190,6 +192,10 @@ public class SettingsActivity extends FragmentActivity
         private boolean mPreferenceHighlighted = false;
         private Preference mDeveloperOptionPref;
 
+        private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
+
+        private Preference mShowGoogleAppPref;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             final Bundle args = getArguments();
@@ -212,6 +218,9 @@ public class SettingsActivity extends FragmentActivity
                     screen.removePreference(preference);
                 }
             }
+
+            mShowGoogleAppPref = screen.findPreference(KEY_MINUS_ONE);
+            updateIsGoogleAppEnabled();
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
                 if (getPreferenceScreen().getTitle().equals(
@@ -249,6 +258,12 @@ public class SettingsActivity extends FragmentActivity
 
         protected String getParentKeyForPref(String key) {
             return null;
+        }
+
+        private void updateIsGoogleAppEnabled() {
+            if (mShowGoogleAppPref != null) {
+                mShowGoogleAppPref.setEnabled(Utilities.isGSAEnabled(getContext()));
+            }
         }
 
         /**
@@ -317,6 +332,7 @@ public class SettingsActivity extends FragmentActivity
                     requestAccessibilityFocus(getListView());
                 }
             }
+            updateIsGoogleAppEnabled();
         }
 
         private PreferenceHighlighter createHighlighter() {
