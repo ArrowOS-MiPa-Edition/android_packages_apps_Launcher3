@@ -55,6 +55,13 @@
         android:title="@string/title_show_google_app"
         android:summary="@string/pref_show_google_now_summary"
         android:defaultValue="true" />
+ 
+    <SwitchPreference
+        android:key="pref_sleep_gesture"
+        android:title="@string/pref_sleep_gesture_title"
+        android:summary="@string/pref_sleep_gesture_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
 
     <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
