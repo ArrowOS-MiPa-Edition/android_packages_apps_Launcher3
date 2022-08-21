@@ -95,4 +95,14 @@
         android:summaryOn="@string/settings_lock_layout_summary_on"
         android:summaryOff="@string/settings_lock_layout_summary_off" />
 
+    <Preference
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary"
+        android:order="-994">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
 </androidx.preference.PreferenceScreen>
