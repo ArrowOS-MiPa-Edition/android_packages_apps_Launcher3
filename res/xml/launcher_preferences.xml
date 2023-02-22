@@ -86,12 +86,6 @@
         <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
     </Preference>
 
-    <Preference
-        android:key="pref_developer_options"
-        android:persistent="false"
-        android:title="@string/developer_options_title"
-        android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
-
     <SwitchPreference
         android:key="pref_desktop_show_labels"
         android:title="@string/desktop_show_labels"
@@ -127,5 +121,11 @@
         android:title="@string/pref_themed_icons_title"
         android:summary="@string/pref_themed_icons_summary"
         android:persistent="true" />
+
+    <Preference
+        android:key="pref_developer_options"
+        android:persistent="false"
+        android:title="@string/developer_options_title"
+        android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
 
 </androidx.preference.PreferenceScreen>
