@@ -45,8 +45,8 @@
     <string name="pref_sleep_gesture_summary">Double tap on empty space for screen-off</string>
 
     <!-- Hide labels -->
-    <string name="desktop_show_labels">Show icon labels on desktop</string>
-    <string name="drawer_show_labels">Show icon labels in drawer</string>
+    <string name="desktop_show_labels">Show icon labels on Home Screen</string>
+    <string name="drawer_show_labels">Show icon labels in Drawer</string>
 
     <!-- Edit workspace -->
     <string name="settings_lock_layout_title">Lock layout</string>
@@ -59,11 +59,12 @@
     <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
 
     <!-- All apps themed icons -->
-    <string name="pref_themed_icons_title">Use themed icons in drawer</string>
-    <string name="pref_themed_icons_summary">Follow themed icons used on home screen</string>
+    <string name="pref_themed_icons_title">Drawer themed icons</string>
+    <string name="pref_themed_icons_summary">Apply themed icons in drawer</string>
 
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">Hidden apps</string>
+    <string name="trust_apps_manager_summary">Hide apps and their widgets from the Drawer and Home Screen</string>
     <string name="trust_apps_auth_manager">Unlock to manage the hidden apps</string>
     <string name="trust_apps_loading">Loading\u2026</string>
     <string name="trust_apps_no_lock_error">Please set up a secure lock screen to restrict app access</string>
